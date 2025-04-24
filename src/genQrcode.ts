@@ -19,4 +19,4 @@ genQrCode.install = (app:any) => {
     // 注册全局属性
     app.config.globalProperties.$genQrCode = (options:Options) => genQrCode(options);
 };
-export {genQrCode}
+export default genQrCode

@@ -3,7 +3,7 @@ import {ref,onMounted} from "vue";
 import {getCurrentInstance} from "vue";
 import GenQrcode from "./genQrcode.vue";
 const $genQrCode= getCurrentInstance()?.appContext.config.globalProperties.$genQrCode
-const qrUrl = ref(null)
+const qrUrl = ref('')
 const qr = $genQrCode({
 	qrText: 'https://www.tontjin.com',
 	qrUrl: 'https://www.tontjin.com',
@@ -12,11 +12,11 @@ const qr = $genQrCode({
 	canvasId: 'canvas',
 	qrTextSize:18,
 })
-qr.handleQrcode().then(res=>{
+qr.handleQrcode().then((res:any)=>{
 	console.log(res)
 	qrUrl.value = res
 })
-const gen = ref(null)
+const gen = ref()
 onMounted(()=>{
 	gen.value.handleQrcode()
 })
