@@ -19,7 +19,7 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "publish": "pnpm run build && pnpm publish --no-git-checks --access public --registry https://registry.npmjs.org/"
+    "publish": "pnpm version patch && pnpm run build && pnpm publish --no-git-checks --access public --registry https://registry.npmjs.org/"
   },
   "dependencies": {
     "qrcode": "^1.5.4",
